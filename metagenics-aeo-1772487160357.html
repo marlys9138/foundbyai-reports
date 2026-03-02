@@ -1,0 +1,472 @@
+<!DOCTYPE html><html lang="en"><!-- run:1772487160356-zh0s85 --><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>AI Visibility Audit — Metagenics</title><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>:root{--bg:#0A0A12;--bg2:#0D0D1A;--bg3:#12121F;--cyan:#00E5FF;--violet:#6C2BD9;--vl:#9B51E0;--w:#FFFFFF;--g:#A0A0B0;--g2:#2A2A3A;--red:#FF3B5C;--b:rgba(0,229,255,.12)}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--w);font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden}.wrap{max-width:860px;margin:0 auto;padding:0 24px 80px}header{display:flex;align-items:center;justify-content:space-between;padding:32px 0 40px;border-bottom:1px solid var(--b);margin-bottom:40px}.logo-text{font-size:18px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.logo-text span{color:var(--cyan)}.hbadge{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--g);background:var(--bg3);border:1px solid var(--g2);padding:6px 12px;border-radius:20px}.hero{margin-bottom:36px}.hero h1{font-size:clamp(26px,5vw,40px);font-weight:800;line-height:1.15;margin-bottom:10px}.accent{color:var(--cyan)}.hero-sub{color:var(--g);font-size:16px}.scard{background:var(--bg3);border:1px solid var(--b);border-radius:16px;padding:32px;margin-bottom:36px}.score-n{font-size:52px;font-weight:800;font-family:'JetBrains Mono',monospace;color:#FFB800}.score-label{font-size:13px;font-weight:700;color:#FFB800;letter-spacing:.08em;text-transform:uppercase;margin-top:4px;margin-bottom:20px}.score-meta{color:var(--g);font-size:13px;margin-top:8px}.score-breakdown{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid var(--g2)}.sbr{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--g)}.sbr-dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}.sbr-y{background:rgba(0,229,255,.15);color:#00E5FF}.sbr-n{background:rgba(255,59,92,.15);color:#FF3B5C}.sbr-lbl{font-family:'JetBrains Mono',monospace;font-size:11px}.report-intro{background:var(--bg3);border:1px solid var(--g2);border-radius:16px;padding:32px;margin-bottom:36px}.ri-headline{font-size:20px;font-weight:700;line-height:1.35;margin-bottom:16px}.ri-p{font-size:14px;color:#C8C8D8;line-height:1.75;margin-bottom:14px}.ri-callout{background:rgba(0,229,255,.06);border-left:3px solid var(--cyan);padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#C8C8D8;line-height:1.65;margin-bottom:10px}.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:16px}.card{background:var(--bg3);border:1px solid var(--g2);border-radius:12px;padding:24px 28px;margin-bottom:12px}.ctag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}.ctitle{font-size:16px;font-weight:700;margin-bottom:8px}.cdesc{font-size:13px;color:#B0B0C0;line-height:1.7;margin-bottom:16px}.instr{background:rgba(0,0,0,.25);border:1px solid var(--g2);border-radius:8px;padding:16px 20px;margin-bottom:16px}.instr-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:12px}.step{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}.step:last-child{margin-bottom:0}.stepn{background:rgba(0,229,255,.12);color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}.steps-text{font-size:13px;color:#C0C0D0;line-height:1.65}.steps-text code{background:rgba(0,229,255,.08);color:var(--cyan);padding:1px 5px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px}.steps-text a{color:var(--cyan)}details summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--cyan);padding:8px 0;list-style:none}details pre{background:rgba(0,0,0,.4);border:1px solid var(--g2);border-radius:8px;padding:16px;overflow-x:auto;max-height:300px;overflow-y:auto;margin-top:8px}details pre code{font-family:'JetBrains Mono',monospace;font-size:12px;color:#e2e8f0;line-height:1.6;white-space:pre-wrap;word-break:break-all}.upsell{background:linear-gradient(135deg,#0D0826 0%,#120A2E 100%);border:1px solid rgba(108,43,217,.4);border-radius:16px;padding:40px 36px;margin:40px 0}.utag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--vl);margin-bottom:12px}.utitle{font-size:28px;font-weight:800;margin-bottom:14px;line-height:1.2}.udesc{font-size:14px;color:#C0B8D8;line-height:1.75;margin-bottom:28px}.ufeatures{margin-bottom:28px}.uf{display:flex;gap:12px;margin-bottom:12px;font-size:13px;color:#C0B8D8;line-height:1.6}.ucheck{color:var(--vl);font-size:16px;flex-shrink:0;margin-top:1px}.uf strong{color:var(--w)}.ubtn{display:inline-block;background:linear-gradient(135deg,var(--violet),var(--vl));color:white;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:10px;text-decoration:none;margin-bottom:12px}.unote{font-size:12px;color:var(--g);font-family:'JetBrains Mono',monospace}footer{border-top:1px solid var(--b);padding:32px 0 0;margin-top:48px}.fl{font-size:16px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.fl span{color:var(--cyan)}</style></head><body><div class="wrap"><header><div class="logo-text">FOUND BY <span>AI</span></div><div class="hbadge">AI VISIBILITY AUDIT · 2 March 2026</div></header><div style="background:rgba(0,229,255,0.04);border:1px solid rgba(0,229,255,0.12);border-radius:6px;padding:9px 14px;margin-bottom:20px;font-size:11px;color:#808090;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em">✦ AI-GENERATED — Review all facts against your actual brand data before publishing</div><div class="hero"><h1>Your <span class="accent">Metagenics</span> AI Audit is Ready</h1><p class="hero-sub">We tested 6 real AI queries. Here’s exactly where you stand.</p></div><div class="scard"><div class="score-n">4/6</div><div class="score-label">Partially Visible to AI</div><p class="score-meta">AI Visibility Score · Metagenics · metagenics.com · 2 March 2026</p><div class="score-breakdown"><div class="sbr"><span class="sbr-dot sbr-y">✓</span><span class="sbr-lbl">Category Recommendation</span></div><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Problem-First Query</span></div><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Direct Comparison</span></div><div class="sbr"><span class="sbr-dot sbr-y">✓</span><span class="sbr-lbl">Expert Query</span></div><div class="sbr"><span class="sbr-dot sbr-y">✓</span><span class="sbr-lbl">Direct Brand Query</span></div><div class="sbr"><span class="sbr-dot sbr-y">✓</span><span class="sbr-lbl">Shopping Intent</span></div></div></div><div class="report-intro"><div class="ri-headline">Metagenics appears in 4 of 6 AI queries — here’s how to close the gaps.</div><p class="ri-p">When we ran 6 different AI queries testing visibility in the professional-grade nutritional supplements for gut health and immune support category, Metagenics appeared in 4 of them. That’s a signal there is some brand awareness in the training data — but 2 out of 6 queries returned no mention at all. AI engines like ChatGPT and Perplexity are constantly recalibrating which brands they trust and recommend, and right now, Metagenics’s visibility is patchy rather than consistent.</p><p class="ri-p">To build consistent, reliable AI visibility, Metagenics needs dedicated answer-style content on its website, structured data that AI crawlers can read, and a citation footprint that signals trustworthiness. The six deliverables below are your roadmap — work through them in order, each layer compounds on the last.</p><div class="ri-callout"><strong>What’s working:</strong> Metagenics has enough brand presence that AI models are aware of it in some query contexts. Your domain authority and existing content are doing some work.</div><div class="ri-callout"><strong>What needs to be built:</strong> Dedicated answer-style content, structured schema markup, a brand facts reference page, and a citation network that tells AI engines Metagenics is a credible, trusted source in professional-grade nutritional supplements for gut health and immune support.</div></div><div class="section-label">Your 6 AI Visibility Deliverables</div><div class="card"><div class="ctag">Layer 1 · Upload to your website</div><div class="ctitle">Answer Hub Page</div><div class="cdesc">The most high-impact page you can add to your website. Structured as a buying guide — the kind of neutral, authoritative content that AI models like ChatGPT and Perplexity learn to cite when someone asks about your category.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Save the file</strong> as <code>answer-hub.html</code> (or paste the HTML into a new page in your CMS).</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Publish it at a clean URL</strong> — ideally something like <code>yoursite.com/best-professional-grade-nutritional-supplements-for-gut-health-and-immune-support</code> or <code>/guide</code>.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Link to it from your homepage or navigation</strong> so search engines and AI crawlers can find it easily.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Submit the URL to Google Search Console</strong> — go to URL Inspection → paste the URL → Request Indexing.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Keep it public</strong> — never put this behind a login or paywall. It only works if AI can read it freely.</div></div></div><details><summary>▶ View &amp; Copy HTML</summary><pre><code>```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Metagenics Answer Hub | Professional Gut Health &amp; Immune Support Supplements&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3f5a 100%);
+            color: white;
+            padding: 60px 20px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        .tldr {
+            background: #e8f4f8;
+            border-left: 5px solid #2c5aa0;
+            padding: 25px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+        }
+        .tldr h2 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .tldr p {
+            margin-bottom: 12px;
+            font-size: 1em;
+        }
+        .products-section {
+            margin-bottom: 60px;
+        }
+        .products-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #2c5aa0;
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 15px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .product-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .product-rank {
+            display: inline-block;
+            background: #2c5aa0;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .product-rank.top {
+            background: #d4af37;
+            color: #1e3f5a;
+        }
+        .product-card h3 {
+            font-size: 1.4em;
+            color: #1e3f5a;
+            margin-bottom: 12px;
+        }
+        .product-specs {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        .product-specs p {
+            margin-bottom: 8px;
+        }
+        .product-specs strong {
+            color: #2c5aa0;
+        }
+        .product-description {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        .faqs-section {
+            margin-bottom: 60px;
+        }
+        .faqs-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #2c5aa0;
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 15px;
+        }
+        .faq-item {
+            background: white;
+            border: 1px</code></pre></details></div><div class="card"><div class="ctag">Layer 2 · Upload to your website</div><div class="ctitle">Brand Facts Page</div><div class="cdesc">AI engines treat this like a Wikipedia entry for your brand. Written in neutral, factual language so AI can extract key details — what you do, who you serve, certifications, pricing, and policies.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Save the file</strong> as <code>brand-facts.html</code> and publish it at <code>yoursite.com/brand-facts</code>.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Keep this URL permanent</strong> — once AI engines index it, changing the URL means starting over.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Add a quiet link to it in your website footer</strong> — a small “Brand Facts” link is enough.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Update it whenever key details change</strong> — new products, certifications, pricing. Stale facts can work against you.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Keep it public</strong> — AI needs to be able to read it freely.</div></div></div><details><summary>▶ View &amp; Copy HTML</summary><pre><code>```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Metagenics - Brand Facts&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #0066cc;
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        .infobox {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Metagenics&lt;/h1&gt;
+
+&lt;div class=&quot;infobox&quot;&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Attribute&lt;/th&gt;
+            &lt;th&gt;Details&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Website&lt;/td&gt;
+            &lt;td&gt;metagenics.com&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Category&lt;/td&gt;
+            &lt;td&gt;Professional-grade nutritional supplements&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Primary Focus&lt;/td&gt;
+            &lt;td&gt;Gut health and immune support&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Distribution Model&lt;/td&gt;
+            &lt;td&gt;Practitioner-only brand&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Price Range&lt;/td&gt;
+            &lt;td&gt;$30–$120&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Key Certifications&lt;/td&gt;
+            &lt;td&gt;GMP certified, NSF certified&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Return Policy&lt;/td&gt;
+            &lt;td&gt;30-day satisfaction guarantee&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Payment Options&lt;/td&gt;
+            &lt;td&gt;HSA/FSA eligible through TrueMed&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Metagenics is a professional-grade</code></pre></details></div><div class="card"><div class="ctag">Layer 3 · Requires developer</div><div class="ctitle">Schema Markup &amp; Brand JSON</div><div class="cdesc">The machine-readable layer — invisible to visitors but essential for AI. Tells search engines and AI crawlers exactly how to classify your brand, products, and FAQs.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Copy the JSON-LD block</strong> and give it to your developer to paste inside the <code>&lt;head&gt;</code> tag of your homepage.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>For the brand-facts.json file</strong> — ask your developer to upload it to <code>/.well-known/brand-facts.json</code> on your server.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Test your schema</strong> after it’s live at <a href="https://validator.schema.org" target="_blank" style="color:#00E5FF">validator.schema.org</a> — paste your homepage URL and check for errors.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>No developer?</strong> Most platforms (Shopify, Squarespace, Webflow) have a “custom code” section in settings where you can paste JSON-LD directly.</div></div></div><details><summary>▶ View &amp; Copy Code</summary><pre><code>```json
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;Metagenics&quot;,
+  &quot;url&quot;: &quot;https://metagenics.com&quot;,
+  &quot;logo&quot;: null,
+  &quot;description&quot;: &quot;Professional-grade nutritional supplements for gut health and immune support&quot;,
+  &quot;category&quot;: &quot;professional-grade nutritional supplements&quot;,
+  &quot;sameAs&quot;: null,
+  &quot;contactPoint&quot;: null,
+  &quot;address&quot;: null,
+  &quot;telephone&quot;: null,
+  &quot;email&quot;: null,
+  &quot;numberOfEmployees&quot;: null,
+  &quot;foundingDate&quot;: null,
+  &quot;knowsAbout&quot;: [
+    &quot;gut health&quot;,
+    &quot;immune support&quot;,
+    &quot;probiotics&quot;,
+    &quot;omega-3 supplementation&quot;,
+    &quot;phytonutrients&quot;,
+    &quot;practitioner-supervised nutrition&quot;
+  ],
+  &quot;offers&quot;: {
+    &quot;@type&quot;: &quot;AggregateOffer&quot;,
+    &quot;priceCurrency&quot;: &quot;USD&quot;,
+    &quot;lowPrice&quot;: &quot;30&quot;,
+    &quot;highPrice&quot;: &quot;120&quot;,
+    &quot;description&quot;: &quot;Professional-grade nutritional supplements&quot;
+  },
+  &quot;hasCredential&quot;: [
+    &quot;GMP certified&quot;,
+    &quot;NSF certified&quot;,
+    &quot;Practitioner-only brand&quot;,
+    &quot;Science-backed with peer-reviewed research&quot;
+  ],
+  &quot;potentialAction&quot;: {
+    &quot;@type&quot;: &quot;TradeAction&quot;,
+    &quot;name&quot;: &quot;30-day satisfaction guarantee&quot;,
+    &quot;description&quot;: &quot;Return policy for all products&quot;
+  }
+}
+```
+
+```json
+{
+  &quot;brand&quot;: {
+    &quot;name&quot;: &quot;Metagenics&quot;,
+    &quot;website&quot;: &quot;https://metagenics.com&quot;,
+    &quot;category&quot;: &quot;professional-grade nutritional supplements for gut health and immune support&quot;,
+    &quot;description&quot;: &quot;Science-backed nutritional supplements designed to address chronic health conditions including gut dysfunction, immune dysregulation, hormonal imbalance, and fatigue through practitioner-supervised nutrition.&quot;,
+    &quot;tagline&quot;: &quot;A Smarter Way to Do Vitamins &amp; Supplements&quot;,
+    &quot;priceRange&quot;: {
+      &quot;currency&quot;: &quot;USD&quot;,
+      &quot;min&quot;: 30,
+      &quot;max&quot;: 120
+    }
+  },
+  &quot;products&quot;: [
+    {
+      &quot;name&quot;: &quot;UltraFlora Balance&quot;,
+      &quot;category&quot;: &quot;Probiotics&quot;,
+      &quot;description&quot;: &quot;Probiotic with 30 billion CFU, clinically studied strains&quot;,
+      &quot;priceUSD&quot;: null
+    },
+    {
+      &quot;name&quot;: &quot;OmegaGenics EPA-DHA 720&quot;,
+      &quot;category&quot;: &quot;Omega-3 Supplements&quot;,
+      &quot;description&quot;: &quot;Pharmaceutical-grade fish oil, 720mg EPA+DHA per serve&quot;,
+      &quot;priceUSD&quot;: null
+    },
+    {
+      &quot;name&quot;: &quot;PhytoMulti&quot;,
+      &quot;category&quot;: &quot;Multivitamins&quot;,
+      &quot;description&quot;: &quot;Phytonutrient-packed multivitamin with DNA protection blend&quot;,
+      &quot;priceUSD&quot;: 25.00
+    }
+  ],
+  &quot;competitors&quot;: [
+    &quot;Thorne&quot;,
+    &quot;Pure Encapsulations&quot;,
+    &quot;Designs for Health&quot;
+  ],
+  &quot;certifications&quot;: [
+    &quot;GMP certified&quot;,
+    &quot;NSF certified&quot;,
+    &quot;Practitioner-only brand&quot;,
+    &quot;Science</code></pre></details></div><div class="card"><div class="ctag">Layer 4 · Action checklist</div><div class="ctitle">Google Merchant Center Checklist</div><div class="cdesc">ChatGPT now surfaces shopping results. If your product listings aren’t optimised, you’re invisible to AI-driven purchase intent.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Open Google Merchant Center</strong> — go to Products → All Products and review your current feed health.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Work through the checklist top to bottom</strong> — items are ordered by impact. Tick each one off as you action it.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>For feed updates</strong> — use your ecommerce platform’s built-in feed manager or a tool like DataFeedWatch.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Re-submit your feed</strong> after making changes and allow 3–5 business days for Google to process.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Not on Merchant Center yet?</strong> Create a free account at <a href="https://merchants.google.com" target="_blank" style="color:#00E5FF">merchants.google.com</a> — setup takes about 30 minutes.</div></div></div><details><summary>▶ View &amp; Copy Checklist</summary><pre><code># GOOGLE MERCHANT CENTER OPTIMISATION CHECKLIST — METAGENICS
+
+---
+
+## ☐ 1. PRODUCT FEED TITLE OPTIMISATION
+Ensure all product titles include: brand name + product name + key benefit + dosage/format
+- UltraFlora Balance: &quot;Metagenics UltraFlora Balance Probiotic — 30 Billion CFU Clinically Studied Strains&quot;
+- OmegaGenics EPA-DHA 720: &quot;Metagenics OmegaGenics EPA-DHA 720 — Pharmaceutical-Grade Fish Oil 720mg&quot;
+- PhytoMulti: &quot;Metagenics PhytoMulti — Phytonutrient Multivitamin with DNA Protection Blend&quot;
+- [confirm with brand] for all other products listed on website
+
+---
+
+## ☐ 2. CERTIFICATION &amp; AUTHORITY ATTRIBUTES
+Add structured data fields for: GMP certified, NSF certified, practitioner-only, peer-reviewed research backing
+- Include in product description and merchant-specific attributes
+- Link to third-party certification badges where verifiable
+- [confirm with brand] on how to validate peer-reviewed research claims in feed
+
+---
+
+## ☐ 3. HIGHLIGHT HSA/FSA ELIGIBILITY
+Tag eligible products with: &quot;HSA/FSA eligible&quot; in product description
+- Reference TrueMed payment option integration at checkout
+- Include in custom labels: &quot;hsa_fsa_eligible: yes&quot;
+- [confirm with brand] which specific products qualify for HSA/FSA
+
+---
+
+## ☐ 4. PRICE RANGE &amp; PROMOTIONAL MESSAGING
+Ensure accurate pricing across all SKUs within stated $30–$120 range
+- Add &quot;30% savings with pre-tax funds&quot; promotional text to Google Ads &amp; feed descriptions
+- Include sale price and regular price fields correctly formatted
+- [confirm with brand] current promotional end date and applicable products
+
+---
+
+## ☐ 5. HEALTH CONDITION TARGETING &amp; CATEGORY MAPPING
+Create accurate Google product category assignments for:
+- Gut health → &quot;Health &amp; Beauty &gt; Vitamins &amp; Supplements &gt; Digestive Health&quot;
+- Immune support → &quot;Health &amp; Beauty &gt; Vitamins &amp; Supplements &gt; Immune Support&quot;
+- [confirm with brand] exact category mappings for hormonal balance, energy/fatigue products
+
+---
+
+## ☐ 6. DESCRIPTION COPY — PROBLEM/SOLUTION ALIGNMENT
+Rewrite product descriptions to address core use cases:
+- Chronic gut dysfunction → UltraFlora Balance messaging
+-</code></pre></details></div><div class="card"><div class="ctag">Layer 5 · 30-day plan</div><div class="ctitle">Citation Building Playbook</div><div class="cdesc">AI engines determine trustworthiness by how many credible sources reference your brand. This week-by-week plan tells you exactly who to contact, what to ask, and which platforms matter most.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Start with Wikidata this week</strong> — highest-leverage first step. Create or claim your brand entity at <a href="https://www.wikidata.org" target="_blank" style="color:#00E5FF">wikidata.org</a>.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Follow the week-by-week plan in order</strong> — the sequence is intentional. Don’t skip ahead.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Track every placement in a spreadsheet</strong> — platform, URL, date submitted, date live, status.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Quality over quantity</strong> — one strong citation on a credible industry site beats ten low-authority blog mentions.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Use the email template in the playbook</strong> — personalise it, but don’t rewrite it from scratch.</div></div></div><details><summary>▶ View &amp; Copy Playbook</summary><pre><code># 30-Day Citation Building Playbook for Metagenics
+
+## WEEK 1: WIKIDATA + REVIEW SITES
+
+**Objective:** Establish foundational brand presence and third-party validation across structured data platforms and professional review ecosystems.
+
+---
+
+### Day 1-2: Wikidata Optimization
+
+**Action Items:**
+
+1. **Verify/Create Metagenics Entity on Wikidata**
+   - Navigate to Wikidata.org
+   - Search &quot;Metagenics&quot;
+   - Confirm or add the following properties:
+     - Instance of: pharmaceutical company / nutritional supplement manufacturer
+     - Founded: year established
+     - Headquarters: location
+     - Website: metagenics.com
+     - Product line: nutritional supplements
+     - Certifications: GMP, NSF certified
+
+2. **Add Product-Level Entries**
+   - Create/enhance Wikidata entries for flagship products:
+     - UltraFlora Balance (probiotic)
+     - OmegaGenics EPA-DHA 720 (fish oil)
+     - PhytoMulti (multivitamin)
+   - Link each to parent company entity
+   - Include: active ingredients, CFU/dosage, clinical backing
+
+3. **Cross-Link Competitor References**
+   - Ensure Wikidata entries reference competitor brands (Thorne, Pure Encapsulations, Designs for Health) where relevant to category
+   - This establishes Metagenics within professional-grade supplement ecosystem
+
+**Time Investment:** 3-4 hours total
+
+---
+
+### Day 3-5: Professional Review Site Citations
+
+**Target Platforms (Well-Established, Legitimate):**
+
+1. **ConsumerLab.com**
+   - Third-party testing authority for supplements
+   - Submit Metagenics products for review consideration
+   - Cite existing certifications (GMP, NSF)
+   - Highlight: 30-day satisfaction guarantee, clinical research backing
+
+2. **Labdoor.com**
+   - Independent supplement testing platform
+   - Register brand, upload product certifications
+   - Request testing/rating for UltraFlora Balance and OmegaGenics EPA-DHA 720
+
+3. **Wirecutter/NYT Recommended (if eligible)**
+   - Professional-grade supplements category
+   - Submit product information packet with clinical studies
+
+4. **Healthline/Medical News Today Expert Review Programs**
+   - These platforms regularly feature professional supplement brands
+   - Prepare one-page product overview highlighting practitioner-only positioning
+   - Note: HSA/FSA eligibility as value differentiator
+
+5. **Amazon/Google Product Ratings Integration**
+   - Ensure product pages show aggregated star ratings (4.5–4.8 range per homepage data)
+   - Verify review authenticity and response protocol
+
+**Outreach Template (Review Sites):**
+
+**Subject Line:** Metagenics Professional-Grade Supplement Line — Testing &amp; Review Submission
+
+Dear [Platform] Team,
+
+Metagen</code></pre></details></div><div class="card"><div class="ctag">Layer 6 · Weekly tracking</div><div class="ctitle">AI Monitoring Prompts</div><div class="cdesc">You can’t improve what you don’t measure. Paste these into ChatGPT or Perplexity once a week to track how your brand is being described and whether visibility is improving.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Save all 6 prompts</strong> somewhere accessible — a Notes app, Notion doc, or Google Doc you can open weekly.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Run them every Monday morning</strong> in both ChatGPT and Perplexity — the two models often give different results.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Screenshot or copy the responses each week</strong> — you need a record to compare month-on-month.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Note which query types mention Metagenics</strong> and which don’t — this maps directly to your 6 audit query types.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Share your tracking doc with us</strong> if you’re on the monthly subscription — we’ll use it to guide each month’s work.</div></div></div><details><summary>▶ View &amp; Copy Prompts</summary><pre><code># 6 Weekly Metagenics AI Monitoring Prompts
+
+---
+
+## PROMPT 1: Category Recommendation
+&quot;What are the best professional-grade probiotic supplements for restoring gut health and supporting immune function? I'm looking for clinically studied strains with at least 30 billion CFU. Which brands offer practitioner-supervised options with GMP and NSF certification?&quot;
+
+---
+
+## PROMPT 2: Problem-First
+&quot;I'm experiencing chronic gut dysfunction, immune dysregulation, and persistent fatigue. My practitioner mentioned I need a comprehensive approach combining probiotics, omega-3 supplementation, and phytonutrient support. What professional-grade supplement regimen would address all three concerns simultaneously?&quot;
+
+---
+
+## PROMPT 3: Direct Brand
+&quot;Tell me about Metagenics UltraFlora Balance probiotic, OmegaGenics EPA-DHA 720 fish oil, and PhytoMulti multivitamin. What are the specific clinical studies backing each product, and how do they work together for gut health and immune support?&quot;
+
+---
+
+## PROMPT 4: Competitor Comparison
+&quot;Compare Metagenics, Thorne, Pure Encapsulations, and Designs for Health across: probiotic CFU potency, pharmaceutical-grade omega-3 formulations, phytonutrient multivitamins, certification standards, and pricing. Which brand is best for practitioner-supervised gut health protocols?&quot;
+
+---
+
+## PROMPT 5: Expert Recommendation
+&quot;A naturopathic doctor or functional medicine MD recommends Metagenics for hormonal imbalance, immune dysregulation, and fatigue. What is their professional rationale for choosing Metagenics over competitors, and which specific products do they typically recommend together?&quot;
+
+---
+
+## PROMPT 6: Shopping Intent
+&quot;Where can I buy Metagenics supplements with HSA/FSA eligibility? What's the current pricing for UltraFlora Balance, OmegaGenics EPA-DHA 720, and PhytoMulti, and does Metagenics offer bundle discounts or PracStacks? What's the return policy?&quot;</code></pre></details></div><div class="upsell"><div class="utag">MONTHLY AI VISIBILITY SUBSCRIPTION</div><h2 class="utitle">Stay found. Every month.</h2><p class="udesc">AI models update what they recommend constantly. A one-time audit gives you the blueprint — but the brands that win are the ones that keep building. Our monthly subscription keeps your visibility compounding month after month.</p><div class="ufeatures"><div class="uf"><span class="ucheck">✓</span><div><strong>Monthly AI audit</strong> — track your score across all 6 query types and watch it grow</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Fresh content updates</strong> — Answer Hub and Brand Facts refreshed with new questions AI is asking</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Citation building</strong> — ongoing outreach to grow your trust signals every month</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Weekly monitoring prompts</strong> — sent to your inbox so you never miss a shift in your visibility</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Schema &amp; structured data updates</strong> — keep your markup aligned as AI evolves</div></div></div><a href="https://buy.stripe.com/7sY5kD26tc6C3BHc5V0RG04" class="ubtn" target="_blank">Start your subscription →</a><p class="unote">$400/month · No lock-in · Cancel anytime</p></div><footer><div class="fl">FOUND BY <span>AI</span></div></footer></div></body></html>
