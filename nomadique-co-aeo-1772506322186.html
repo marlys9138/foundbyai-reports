@@ -1,0 +1,468 @@
+<!DOCTYPE html><html lang="en"><!-- run:1772506322185-wcltpf --><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>AI Visibility Audit — Nomadique Co</title><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>:root{--bg:#0A0A12;--bg2:#0D0D1A;--bg3:#12121F;--cyan:#00E5FF;--violet:#6C2BD9;--vl:#9B51E0;--w:#FFFFFF;--g:#A0A0B0;--g2:#2A2A3A;--red:#FF3B5C;--b:rgba(0,229,255,.12)}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--w);font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden}.wrap{max-width:860px;margin:0 auto;padding:0 24px 80px}header{display:flex;align-items:center;justify-content:space-between;padding:32px 0 40px;border-bottom:1px solid var(--b);margin-bottom:40px}.logo-text{font-size:18px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.logo-text span{color:var(--cyan)}.hbadge{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--g);background:var(--bg3);border:1px solid var(--g2);padding:6px 12px;border-radius:20px}.hero{margin-bottom:36px}.hero h1{font-size:clamp(26px,5vw,40px);font-weight:800;line-height:1.15;margin-bottom:10px}.accent{color:var(--cyan)}.hero-sub{color:var(--g);font-size:16px}.scard{background:var(--bg3);border:1px solid var(--b);border-radius:16px;padding:32px;margin-bottom:36px}.score-n{font-size:52px;font-weight:800;font-family:'JetBrains Mono',monospace;color:#FFB800}.score-label{font-size:13px;font-weight:700;color:#FFB800;letter-spacing:.08em;text-transform:uppercase;margin-top:4px;margin-bottom:20px}.score-meta{color:var(--g);font-size:13px;margin-top:8px}.score-breakdown{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid var(--g2)}.sbr{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--g)}.sbr-dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}.sbr-y{background:rgba(0,229,255,.15);color:#00E5FF}.sbr-n{background:rgba(255,59,92,.15);color:#FF3B5C}.sbr-lbl{font-family:'JetBrains Mono',monospace;font-size:11px}.report-intro{background:var(--bg3);border:1px solid var(--g2);border-radius:16px;padding:32px;margin-bottom:36px}.ri-headline{font-size:20px;font-weight:700;line-height:1.35;margin-bottom:16px}.ri-p{font-size:14px;color:#C8C8D8;line-height:1.75;margin-bottom:14px}.ri-callout{background:rgba(0,229,255,.06);border-left:3px solid var(--cyan);padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#C8C8D8;line-height:1.65;margin-bottom:10px}.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:16px}.card{background:var(--bg3);border:1px solid var(--g2);border-radius:12px;padding:24px 28px;margin-bottom:12px}.ctag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}.ctitle{font-size:16px;font-weight:700;margin-bottom:8px}.cdesc{font-size:13px;color:#B0B0C0;line-height:1.7;margin-bottom:16px}.instr{background:rgba(0,0,0,.25);border:1px solid var(--g2);border-radius:8px;padding:16px 20px;margin-bottom:16px}.instr-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:12px}.step{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}.step:last-child{margin-bottom:0}.stepn{background:rgba(0,229,255,.12);color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}.steps-text{font-size:13px;color:#C0C0D0;line-height:1.65}.steps-text code{background:rgba(0,229,255,.08);color:var(--cyan);padding:1px 5px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px}.steps-text a{color:var(--cyan)}details summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--cyan);padding:8px 0;list-style:none}details pre{background:rgba(0,0,0,.4);border:1px solid var(--g2);border-radius:8px;padding:16px;overflow-x:auto;max-height:300px;overflow-y:auto;margin-top:8px}details pre code{font-family:'JetBrains Mono',monospace;font-size:12px;color:#e2e8f0;line-height:1.6;white-space:pre-wrap;word-break:break-all}.upsell{background:linear-gradient(135deg,#0D0826 0%,#120A2E 100%);border:1px solid rgba(108,43,217,.4);border-radius:16px;padding:40px 36px;margin:40px 0}.utag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--vl);margin-bottom:12px}.utitle{font-size:28px;font-weight:800;margin-bottom:14px;line-height:1.2}.udesc{font-size:14px;color:#C0B8D8;line-height:1.75;margin-bottom:28px}.ufeatures{margin-bottom:28px}.uf{display:flex;gap:12px;margin-bottom:12px;font-size:13px;color:#C0B8D8;line-height:1.6}.ucheck{color:var(--vl);font-size:16px;flex-shrink:0;margin-top:1px}.uf strong{color:var(--w)}.ubtn{display:inline-block;background:linear-gradient(135deg,var(--violet),var(--vl));color:white;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:10px;text-decoration:none;margin-bottom:12px}.unote{font-size:12px;color:var(--g);font-family:'JetBrains Mono',monospace}footer{border-top:1px solid var(--b);padding:32px 0 0;margin-top:48px}.fl{font-size:16px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.fl span{color:var(--cyan)}</style></head><body><div class="wrap"><header><div class="logo-text">FOUND BY <span>AI</span></div><div class="hbadge">AI VISIBILITY AUDIT · 3 March 2026</div></header><div style="background:rgba(0,229,255,0.04);border:1px solid rgba(0,229,255,0.12);border-radius:6px;padding:9px 14px;margin-bottom:20px;font-size:11px;color:#808090;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em">✦ AI-GENERATED — Review all facts against your actual brand data before publishing</div><div class="hero"><h1>Your <span class="accent">Nomadique Co</span> AI Audit is Ready</h1><p class="hero-sub">We tested 6 real AI queries. Here's exactly where you stand.</p></div><div class="scard"><div class="score-n">2/6</div><div class="score-label">Partially Visible to AI</div><p class="score-meta">AI Visibility Score · Nomadique Co · www.nomadiqueco.com · 3 March 2026</p><div class="score-breakdown"><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Category Recommendation</span></div><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Problem-First Query</span></div><div class="sbr"><span class="sbr-dot sbr-y">✓</span><span class="sbr-lbl">Direct Comparison</span></div><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Expert Query</span></div><div class="sbr"><span class="sbr-dot sbr-y">✓</span><span class="sbr-lbl">Direct Brand Query</span></div><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Shopping Intent</span></div></div></div><div class="report-intro"><div class="ri-headline">Nomadique Co appears in 2 of 6 AI queries — here's how to close the gaps.</div><p class="ri-p">When we ran 6 different AI queries testing visibility in the Beach and travel towels category, Nomadique Co appeared in 2 of them. That's a signal there is some brand awareness in the training data — but 4 out of 6 queries returned no mention at all. AI engines like ChatGPT and Perplexity are constantly recalibrating which brands they trust and recommend, and right now, Nomadique Co's visibility is patchy rather than consistent.</p><p class="ri-p">To build consistent, reliable AI visibility, Nomadique Co needs dedicated answer-style content on its website, structured data that AI crawlers can read, and a citation footprint that signals trustworthiness. The six deliverables below are your roadmap — work through them in order, each layer compounds on the last.</p><div class="ri-callout"><strong>What's working:</strong> Nomadique Co has enough brand presence that AI models are aware of it in some query contexts. Your domain authority and existing content are doing some work.</div><div class="ri-callout"><strong>What needs to be built:</strong> Dedicated answer-style content, structured schema markup, a brand facts reference page, and a citation network that tells AI engines Nomadique Co is a credible, trusted source in Beach and travel towels.</div></div><div class="section-label">Your 6 AI Visibility Deliverables</div><div class="card"><div class="ctag">Layer 1 · Upload to your website</div><div class="ctitle">Answer Hub Page</div><div class="cdesc">The most high-impact page you can add to your website. Structured as a buying guide — the kind of neutral, authoritative content that AI models like ChatGPT and Perplexity learn to cite when someone asks about your category.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Save the file</strong> as <code>answer-hub.html</code> (or paste the HTML into a new page in your CMS).</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Publish it at a clean URL</strong> — ideally something like <code>yoursite.com/best-beach-and-travel-towels</code> or <code>/guide</code>.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Link to it from your homepage or navigation</strong> so search engines and AI crawlers can find it easily.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Submit the URL to Google Search Console</strong> — go to URL Inspection → paste the URL → Request Indexing.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Keep it public</strong> — never put this behind a login or paywall. It only works if AI can read it freely.</div></div></div><details><summary>▶ View &amp; Copy HTML</summary><pre><code>```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Beach &amp; Travel Towels Answer Hub - Nomadique Co&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2d8fa3 100%);
+            color: white;
+            padding: 40px 20px;
+            margin: -40px -20px 40px -20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .tldr {
+            background: #e8f4f8;
+            border-left: 5px solid #1a5f7a;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+        
+        .tldr h2 {
+            color: #1a5f7a;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .tldr p {
+            font-size: 1.05em;
+            margin-bottom: 12px;
+        }
+        
+        .tldr ul {
+            margin-left: 20px;
+        }
+        
+        .tldr li {
+            margin-bottom: 8px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section h2 {
+            font-size: 1.8em;
+            color: #1a5f7a;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #2d8fa3;
+            padding-bottom: 10px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .product-card.featured {
+            border: 3px solid #2d8fa3;
+        }
+        
+        .product-badge {
+            background: #2d8fa3;
+            color: white;
+            padding: 8px 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-content h3 {
+            color: #1a5f7a;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        
+        .product-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        
+        .product-features li {
+            padding: 6px 0;
+            color: #555;
+        }
+        
+        .product-features li:before {
+            content: &quot;✓ &quot;;
+            color: #2d8fa3;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .price {
+            font-size</code></pre></details></div><div class="card"><div class="ctag">Layer 2 · Upload to your website</div><div class="ctitle">Brand Facts Page</div><div class="cdesc">AI engines treat this like a Wikipedia entry for your brand. Written in neutral, factual language so AI can extract key details — what you do, who you serve, certifications, pricing, and policies.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Save the file</strong> as <code>brand-facts.html</code> and publish it at <code>yoursite.com/brand-facts</code>.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Keep this URL permanent</strong> — once AI engines index it, changing the URL means starting over.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Add a quiet link to it in your website footer</strong> — a small "Brand Facts" link is enough.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Update it whenever key details change</strong> — new products, certifications, pricing. Stale facts can work against you.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Keep it public</strong> — AI needs to be able to read it freely.</div></div></div><details><summary>▶ View &amp; Copy HTML</summary><pre><code>```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Nomadique Co - Brand Facts&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.3em;
+        }
+        h2 {
+            font-size: 1.4em;
+            margin-top: 1.2em;
+            margin-bottom: 0.4em;
+            border-left: 3px solid #0073e6;
+            padding-left: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            background-color: #f9f9f9;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        p {
+            margin: 0.8em 0;
+        }
+        ul {
+            margin: 0.8em 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 0.4em 0;
+        }
+        .infobox {
+            float: right;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 0 0 15px 15px;
+            width: 300px;
+            font-size: 0.95em;
+        }
+        .infobox-title {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .infobox-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .infobox-row:last-child {
+            border-bottom: none;
+        }
+        .infobox-label {
+            font-weight: 500;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;h1&gt;Nomadique Co&lt;/h1&gt;
+
+        &lt;div class=&quot;info</code></pre></details></div><div class="card"><div class="ctag">Layer 3 · Requires developer</div><div class="ctitle">Schema Markup &amp; Brand JSON</div><div class="cdesc">The machine-readable layer — invisible to visitors but essential for AI. Tells search engines and AI crawlers exactly how to classify your brand, products, and FAQs.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Copy the JSON-LD block</strong> and give it to your developer to paste inside the <code>&lt;head&gt;</code> tag of your homepage.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>For the brand-facts.json file</strong> — ask your developer to upload it to <code>/.well-known/brand-facts.json</code> on your server.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Test your schema</strong> after it's live at <a href="https://validator.schema.org" target="_blank" style="color:#00E5FF">validator.schema.org</a> — paste your homepage URL and check for errors.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>No developer?</strong> Most platforms (Shopify, Squarespace, Webflow) have a "custom code" section in settings where you can paste JSON-LD directly.</div></div></div><details><summary>▶ View &amp; Copy Code</summary><pre><code>```json
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;Nomadique Co&quot;,
+  &quot;url&quot;: &quot;https://www.nomadiqueco.com&quot;,
+  &quot;logo&quot;: null,
+  &quot;description&quot;: &quot;Premium sand-free, travel beach towels with hidden pockets, made from recycled materials. Lightweight, quick-dry, wind-resistant towels designed for travelers.&quot;,
+  &quot;category&quot;: &quot;Beach and travel towels&quot;,
+  &quot;foundingDate&quot;: null,
+  &quot;founders&quot;: null,
+  &quot;numberOfEmployees&quot;: null,
+  &quot;address&quot;: null,
+  &quot;telephone&quot;: null,
+  &quot;email&quot;: null,
+  &quot;sameAs&quot;: null,
+  &quot;priceRange&quot;: &quot;$50-$100 USD&quot;,
+  &quot;potentialAction&quot;: {
+    &quot;@type&quot;: &quot;BuyAction&quot;,
+    &quot;target&quot;: &quot;https://www.nomadiqueco.com&quot;
+  },
+  &quot;aggregateRating&quot;: {
+    &quot;@type&quot;: &quot;AggregateRating&quot;,
+    &quot;ratingValue&quot;: &quot;4.8&quot;,
+    &quot;reviewCount&quot;: &quot;2000&quot;
+  },
+  &quot;knowsAbout&quot;: [
+    &quot;Sand-free beach towels&quot;,
+    &quot;Travel towels with pockets&quot;,
+    &quot;Recycled material towels&quot;,
+    &quot;Wind-resistant towels&quot;,
+    &quot;Quick-dry towels&quot;
+  ]
+}
+```
+
+```json
+{
+  &quot;brand&quot;: {
+    &quot;name&quot;: &quot;Nomadique Co&quot;,
+    &quot;website&quot;: &quot;https://www.nomadiqueco.com&quot;,
+    &quot;category&quot;: &quot;Beach and travel towels&quot;,
+    &quot;description&quot;: &quot;Premium sand-free, travel beach towels with hidden pockets designed for travelers&quot;,
+    &quot;products&quot;: {
+      &quot;main&quot;: &quot;Sand-free beach towels with hidden pockets&quot;,
+      &quot;features&quot;: [
+        &quot;Modern, stylish design&quot;,
+        &quot;Hidden zip pocket for valuables&quot;,
+        &quot;Wind-proof with pegged corners&quot;,
+        &quot;Lightweight and absorbent&quot;,
+        &quot;Quick-dry properties&quot;,
+        &quot;Made from recycled materials&quot;,
+        &quot;Compact for travel&quot;
+      ]
+    },
+    &quot;pricing&quot;: {
+      &quot;range&quot;: &quot;$50-$100 USD&quot;,
+      &quot;currency&quot;: &quot;USD&quot;
+    },
+    &quot;policies&quot;: {
+      &quot;returnPolicy&quot;: &quot;60 days happiness guarantee&quot;
+    },
+    &quot;shipping&quot;: {
+      &quot;freeShippingThreshold&quot;: &quot;$50&quot;,
+      &quot;regions&quot;: [
+        &quot;Australia&quot;,
+        &quot;United Kingdom&quot;
+      ]
+    },
+    &quot;competitors&quot;: [
+      &quot;Tesalate&quot;,
+      &quot;Dock and Bay&quot;,
+      &quot;Nakie&quot;
+    ],
+    &quot;uniqueValue&quot;: &quot;Hidden water-resistant zip pocket for keeping valuables safe while swimming&quot;,
+    &quot;sustainability&quot;: &quot;30 plastic bottles saved for every towel purchased&quot;,
+    &quot;social&quot;: null,
+    &quot;contact&quot;: null,
+    &quot;address&quot;: null,
+    &quot;certifications&quot;: null,
+    &quot;founded&quot;: null,
+    &quot;employees&quot;: null
+  }
+}
+```</code></pre></details></div><div class="card"><div class="ctag">Layer 4 · Action checklist</div><div class="ctitle">Google Merchant Center Checklist</div><div class="cdesc">ChatGPT now surfaces shopping results. If your product listings aren't optimised, you're invisible to AI-driven purchase intent.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Open Google Merchant Center</strong> — go to Products → All Products and review your current feed health.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Work through the checklist top to bottom</strong> — items are ordered by impact. Tick each one off as you action it.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>For feed updates</strong> — use your ecommerce platform's built-in feed manager or a tool like DataFeedWatch.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Re-submit your feed</strong> after making changes and allow 3–5 business days for Google to process.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Not on Merchant Center yet?</strong> Create a free account at <a href="https://merchants.google.com" target="_blank" style="color:#00E5FF">merchants.google.com</a> — setup takes about 30 minutes.</div></div></div><details><summary>▶ View &amp; Copy Checklist</summary><pre><code># GOOGLE MERCHANT CENTER OPTIMIZATION CHECKLIST
+## Nomadique Co — Beach and Travel Towels
+
+---
+
+☐ **1. Product Title Optimization**
+Include primary differentiators in titles: &quot;Sand Free Beach Towel with Pocket&quot; + key attributes (lightweight, quick-dry, wind-resistant). Current titles [confirm with brand]. Ensure titles follow: [Brand] [Product Type] [Key Feature] [Material/Benefit].
+
+☐ **2. Complete Product Descriptions**
+Expand descriptions to highlight: hidden water-resistant zip pocket, sand-free technology, quick-dry, lightweight, wind-resistant design, recycled materials, compact for travel. Include competitor differentiation vs. Tesalate, Dock and Bay, Nakie.
+
+☐ **3. Product Images &amp; Alt Text**
+Add lifestyle images showing: hidden pocket detail, sand-free demonstration, packing/travel use, wind-resistant corners (pegged design). Confirm all images meet Google specs (min 800x800px). Add descriptive alt text for accessibility.
+
+☐ **4. Accurate Pricing &amp; Promotions Feed**
+Sync &quot;BUY 1 GET 1 FREE, MIX AND MATCH&quot; promotion in Merchant Center. Confirm all price variations ($50-100 range) are current. Apply sale_price field for all discounted SKUs.
+
+☐ **5. GTINs / Identifiers**
+[Confirm with brand]: Provide UPC/EAN codes for each product variant (colour, size). If unavailable, use brand + MPN. Ensure no duplicate GTINs across variants.
+
+☐ **6. Product Type &amp; Category Classification**
+Set category as: Home &gt; Linens &amp; Bedding &gt; Towels. Add Google product category ID (18633 for towels). Ensure consistency across all listings.
+
+☐ **7. Attributes: Material &amp; Care**
+Add material: [confirm percentage breakdown of recycled content]. Add care instructions: washing temp, drying method. Highlight &quot;quick-dry&quot; and &quot;absorbent&quot; in attributes.
+
+☐ **8. Return Policy &amp; Shipping**
+Add 60-day &quot;happiness guarantee&quot; return policy to all product listings. Confirm shipping costs/thresholds (free delivery over $50 AUD/GBP). Add delivery timeframes (Fast Delivery claim).
+
+☐ **9. Inventory &amp; Availability Status**
+Ensure stock status synchronized in real-time. Set accurate quantities for each colour/variant. Flag out-of-stock items immediately; use &quot;Temporarily out of stock&quot; rather than deleting.
+
+☐ **10</code></pre></details></div><div class="card"><div class="ctag">Layer 5 · 30-day plan</div><div class="ctitle">Citation Building Playbook</div><div class="cdesc">AI engines determine trustworthiness by how many credible sources reference your brand. This week-by-week plan tells you exactly who to contact, what to ask, and which platforms matter most.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Start with Wikidata this week</strong> — highest-leverage first step. Create or claim your brand entity at <a href="https://www.wikidata.org" target="_blank" style="color:#00E5FF">wikidata.org</a>.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Follow the week-by-week plan in order</strong> — the sequence is intentional. Don't skip ahead.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Track every placement in a spreadsheet</strong> — platform, URL, date submitted, date live, status.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Quality over quantity</strong> — one strong citation on a credible industry site beats ten low-authority blog mentions.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Use the email template in the playbook</strong> — personalise it, but don't rewrite it from scratch.</div></div></div><details><summary>▶ View &amp; Copy Playbook</summary><pre><code># 30-DAY CITATION BUILDING PLAYBOOK
+## Nomadique Co | Beach &amp; Travel Towels
+
+---
+
+## WEEK 1: WIKIDATA + REVIEW SITES
+
+### WIKIDATA SETUP
+- Create/claim Nomadique Co entity on Wikidata
+- Add: company name, website (www.nomadiqueco.com), category (textiles/beach products), founding location (Australia)
+- Link to product categories: beach towels, travel towels, sand-free textiles
+- Add notable features: hidden pocket design, wind-resistant, recycled materials
+- Include competitor references: Tesalate, Dock and Bay, Nakie
+
+### REVIEW SITE CITATIONS
+
+**Primary Review Platforms:**
+- Trustpilot (create business profile, encourage 2,000+ existing reviews migration/verification)
+- Google Business Profile (if physical location exists, or service area Australia/UK)
+- Shopiffy App Store reviews (if applicable)
+- ProductHunt (if launching/relaunching angle available)
+
+**Niche Review Sites:**
+- TrustRadius (business/consumer products)
+- SiteJabber (e-commerce verification)
+- Capterra (if relevant to audience)
+
+**Beach/Travel Specific:**
+- Alltrails community reviews
+- Beach-specific travel blogs' review sections
+- Amazon (if selling there - creates citation + reviews)
+
+**Action Items:**
+- Audit existing 2,000+ reviews - ensure they're visible/verified across platforms
+- Create Google Business Profile with full details
+- Set up Trustpilot business account with call-to-action for review migration
+- Claim any existing unverified listings
+
+---
+
+## WEEK 2: INDUSTRY DIRECTORIES
+
+### DIRECTORY SUBMISSIONS
+
+**E-commerce &amp; Retail Directories:**
+- BuiltWith (tech stack directory)
+- Crunchbase (company profile)
+- Australian Small Business Directory (if eligible)
+- Shopify App Store (if using Shopify)
+
+**Industry-Specific Directories:**
+- Australian Textile &amp; Fashion Suppliers Directory
+- Beach &amp; Resort Wear Directories
+- Sustainable/Recycled Materials Suppliers (emphasize recycled materials angle)
+- Travel Gear &amp; Accessories Directories
+
+**Sustainability/ESG Directories:**
+- B Corp Directory (if certified)
+- Ethical Consumer Directory
+- Eco-friendly Product Directories (highlight 30 plastic bottles saved per towel)
+
+**Local Directories:**
+- Australian Chamber of Commerce
+- Better Business Bureau (if applicable to regions)
+- Industry associations (Textile, Fashion, Retail)
+
+**Action Items:**
+- Complete all directory submissions with consistent NAP (Name, Address, Phone)
+- Use website URL and description emphasizing: sand-free, hidden pocket, lightweight, quick-dry, recycled materials
+- Include product categories: beach towels, travel towels, textiles
+- Add 60-day happiness guarantee in business description where applicable
+
+---
+
+## WEEK 3: EDITORIAL OUTREACH
+
+### OUTREACH</code></pre></details></div><div class="card"><div class="ctag">Layer 6 · Weekly tracking</div><div class="ctitle">AI Monitoring Prompts</div><div class="cdesc">You can't improve what you don't measure. Paste these into ChatGPT or Perplexity once a week to track how your brand is being described and whether visibility is improving.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Save all 6 prompts</strong> somewhere accessible — a Notes app, Notion doc, or Google Doc you can open weekly.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Run them every Monday morning</strong> in both ChatGPT and Perplexity — the two models often give different results.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Screenshot or copy the responses each week</strong> — you need a record to compare month-on-month.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Note which query types mention Nomadique Co</strong> and which don't — this maps directly to your 6 audit query types.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Share your tracking doc with us</strong> if you're on the monthly subscription — we'll use it to guide each month's work.</div></div></div><details><summary>▶ View &amp; Copy Prompts</summary><pre><code># 6 Weekly AI Monitoring Prompts for Nomadique Co
+
+---
+
+## PROMPT 1: Category Recommendation
+What are the best sand-free beach towels with pockets for travel in 2024? I'm looking for something lightweight, quick-drying, and stylish that won't take up much luggage space.
+
+---
+
+## PROMPT 2: Problem-First
+I'm tired of sand getting everywhere when I pack my beach towel, and I have nowhere safe to put my phone and keys while swimming. What's the best solution for a travel beach towel?
+
+---
+
+## PROMPT 3: Direct Brand Search
+Tell me about Nomadique Co beach towels from www.nomadiqueco.com. What makes their towels different and are they worth the price?
+
+---
+
+## PROMPT 4: Competitor Comparison
+Compare sand-free beach towels: Nomadique Co vs Tesalate vs Dock and Bay vs Nakie. Which brand offers the best value between $50-100?
+
+---
+
+## PROMPT 5: Expert Recommendation
+What should I look for in a premium travel beach towel? What features matter most—sand-free technology, weight, pocket storage, wind resistance, or quick-dry capability?
+
+---
+
+## PROMPT 6: Shopping Intent
+Where can I buy a stylish, sand-free beach towel with a pocket and wind-proof features? I want free delivery and ideally a money-back guarantee.</code></pre></details></div><div class="upsell"><div class="utag">MONTHLY AI VISIBILITY SUBSCRIPTION</div><h2 class="utitle">Stay found. Every month.</h2><p class="udesc">AI models update what they recommend constantly. A one-time audit gives you the blueprint — but the brands that win are the ones that keep building. Our monthly subscription keeps your visibility compounding month after month.</p><div class="ufeatures"><div class="uf"><span class="ucheck">✓</span><div><strong>Monthly AI audit</strong> — track your score across all 6 query types and watch it grow</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Fresh content updates</strong> — Answer Hub and Brand Facts refreshed with new questions AI is asking</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Citation building</strong> — ongoing outreach to grow your trust signals every month</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Weekly monitoring prompts</strong> — sent to your inbox so you never miss a shift in your visibility</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Schema &amp; structured data updates</strong> — keep your markup aligned as AI evolves</div></div></div><a href="https://buy.stripe.com/7sY5kD26tc6C3BHc5V0RG04" class="ubtn" target="_blank">Start your subscription →</a><p class="unote">$400/month · No lock-in · Cancel anytime</p></div><footer><div class="fl">FOUND BY <span>AI</span></div></footer></div></body></html>
