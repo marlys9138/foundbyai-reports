@@ -1,0 +1,482 @@
+<!DOCTYPE html><html lang="en"><!-- run:1772614282129-8pft93 --><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>AI Visibility Audit — Studio EfEf</title><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>:root{--bg:#0A0A12;--bg2:#0D0D1A;--bg3:#12121F;--cyan:#00E5FF;--violet:#6C2BD9;--vl:#9B51E0;--w:#FFFFFF;--g:#A0A0B0;--g2:#2A2A3A;--red:#FF3B5C;--b:rgba(0,229,255,.12)}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--w);font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden}.wrap{max-width:860px;margin:0 auto;padding:0 24px 80px}header{display:flex;align-items:center;justify-content:space-between;padding:32px 0 40px;border-bottom:1px solid var(--b);margin-bottom:40px}.logo-text{font-size:18px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.logo-text span{color:var(--cyan)}.hbadge{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--g);background:var(--bg3);border:1px solid var(--g2);padding:6px 12px;border-radius:20px}.hero{margin-bottom:36px}.hero h1{font-size:clamp(26px,5vw,40px);font-weight:800;line-height:1.15;margin-bottom:10px}.accent{color:var(--cyan)}.hero-sub{color:var(--g);font-size:16px}.scard{background:var(--bg3);border:1px solid var(--b);border-radius:16px;padding:32px;margin-bottom:36px}.score-n{font-size:52px;font-weight:800;font-family:'JetBrains Mono',monospace;color:#FFB800}.score-label{font-size:13px;font-weight:700;color:#FFB800;letter-spacing:.08em;text-transform:uppercase;margin-top:4px;margin-bottom:20px}.score-meta{color:var(--g);font-size:13px;margin-top:8px}.score-breakdown{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid var(--g2)}.sbr{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--g)}.sbr-dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}.sbr-y{background:rgba(0,229,255,.15);color:#00E5FF}.sbr-n{background:rgba(255,59,92,.15);color:#FF3B5C}.sbr-lbl{font-family:'JetBrains Mono',monospace;font-size:11px}.report-intro{background:var(--bg3);border:1px solid var(--g2);border-radius:16px;padding:32px;margin-bottom:36px}.ri-headline{font-size:20px;font-weight:700;line-height:1.35;margin-bottom:16px}.ri-p{font-size:14px;color:#C8C8D8;line-height:1.75;margin-bottom:14px}.ri-callout{background:rgba(0,229,255,.06);border-left:3px solid var(--cyan);padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#C8C8D8;line-height:1.65;margin-bottom:10px}.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:16px}.card{background:var(--bg3);border:1px solid var(--g2);border-radius:12px;padding:24px 28px;margin-bottom:12px}.ctag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}.ctitle{font-size:16px;font-weight:700;margin-bottom:8px}.cdesc{font-size:13px;color:#B0B0C0;line-height:1.7;margin-bottom:16px}.instr{background:rgba(0,0,0,.25);border:1px solid var(--g2);border-radius:8px;padding:16px 20px;margin-bottom:16px}.instr-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:12px}.step{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}.step:last-child{margin-bottom:0}.stepn{background:rgba(0,229,255,.12);color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}.steps-text{font-size:13px;color:#C0C0D0;line-height:1.65}.steps-text code{background:rgba(0,229,255,.08);color:var(--cyan);padding:1px 5px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px}.steps-text a{color:var(--cyan)}details summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--cyan);padding:8px 0;list-style:none}details pre{background:rgba(0,0,0,.4);border:1px solid var(--g2);border-radius:8px;padding:16px;overflow-x:auto;max-height:300px;overflow-y:auto;margin-top:8px}details pre code{font-family:'JetBrains Mono',monospace;font-size:12px;color:#e2e8f0;line-height:1.6;white-space:pre-wrap;word-break:break-all}.upsell{background:linear-gradient(135deg,#0D0826 0%,#120A2E 100%);border:1px solid rgba(108,43,217,.4);border-radius:16px;padding:40px 36px;margin:40px 0}.utag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--vl);margin-bottom:12px}.utitle{font-size:28px;font-weight:800;margin-bottom:14px;line-height:1.2}.udesc{font-size:14px;color:#C0B8D8;line-height:1.75;margin-bottom:28px}.ufeatures{margin-bottom:28px}.uf{display:flex;gap:12px;margin-bottom:12px;font-size:13px;color:#C0B8D8;line-height:1.6}.ucheck{color:var(--vl);font-size:16px;flex-shrink:0;margin-top:1px}.uf strong{color:var(--w)}.ubtn{display:inline-block;background:linear-gradient(135deg,var(--violet),var(--vl));color:white;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:10px;text-decoration:none;margin-bottom:12px}.unote{font-size:12px;color:var(--g);font-family:'JetBrains Mono',monospace}footer{border-top:1px solid var(--b);padding:32px 0 0;margin-top:48px}.fl{font-size:16px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.fl span{color:var(--cyan)}</style></head><body><div class="wrap"><header><div class="logo-text">FOUND BY <span>AI</span></div><div class="hbadge">AI VISIBILITY AUDIT · 4 March 2026</div></header><div style="background:rgba(0,229,255,0.04);border:1px solid rgba(0,229,255,0.12);border-radius:6px;padding:9px 14px;margin-bottom:20px;font-size:11px;color:#808090;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em">✦ AI-GENERATED — Review all facts against your actual brand data before publishing</div><div class="hero"><h1>Your <span class="accent">Studio EfEf</span> AI Audit is Ready</h1><p class="hero-sub">We tested 6 real AI queries. Here's exactly where you stand.</p></div><div class="scard"><div class="score-n">1/6</div><div class="score-label">Partially Visible to AI</div><p class="score-meta">AI Visibility Score · Studio EfEf · www.studioefef.com · 4 March 2026</p><div class="score-breakdown"><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Category Recommendation</span></div><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Problem-First Query</span></div><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Direct Comparison</span></div><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Expert Query</span></div><div class="sbr"><span class="sbr-dot sbr-y">✓</span><span class="sbr-lbl">Direct Brand Query</span></div><div class="sbr"><span class="sbr-dot sbr-n">✗</span><span class="sbr-lbl">Shopping Intent</span></div></div></div><div class="report-intro"><div class="ri-headline">Studio EfEf appears in 1 of 6 AI queries — here's how to close the gaps.</div><p class="ri-p">When we ran 6 different AI queries testing visibility in the photography courses category, Studio EfEf appeared in 1 of them. That's a signal there is some brand awareness in the training data — but 5 out of 6 queries returned no mention at all. AI engines like ChatGPT and Perplexity are constantly recalibrating which brands they trust and recommend, and right now, Studio EfEf's visibility is patchy rather than consistent.</p><p class="ri-p">To build consistent, reliable AI visibility, Studio EfEf needs dedicated answer-style content on its website, structured data that AI crawlers can read, and a citation footprint that signals trustworthiness. The six deliverables below are your roadmap — work through them in order, each layer compounds on the last.</p><div class="ri-callout"><strong>What's working:</strong> Studio EfEf has enough brand presence that AI models are aware of it in some query contexts. Your domain authority and existing content are doing some work.</div><div class="ri-callout"><strong>What needs to be built:</strong> Dedicated answer-style content, structured schema markup, a brand facts reference page, and a citation network that tells AI engines Studio EfEf is a credible, trusted source in photography courses.</div></div><div class="section-label">Your 6 AI Visibility Deliverables</div><div class="card"><div class="ctag">Layer 1 · Upload to your website</div><div class="ctitle">Answer Hub Page</div><div class="cdesc">The most high-impact page you can add to your website. Structured as a buying guide — the kind of neutral, authoritative content that AI models like ChatGPT and Perplexity learn to cite when someone asks about your category.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Save the file</strong> as <code>answer-hub.html</code> (or paste the HTML into a new page in your CMS).</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Publish it at a clean URL</strong> — ideally something like <code>yoursite.com/best-photography-courses</code> or <code>/guide</code>.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Link to it from your homepage or navigation</strong> so search engines and AI crawlers can find it easily.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Submit the URL to Google Search Console</strong> — go to URL Inspection → paste the URL → Request Indexing.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Keep it public</strong> — never put this behind a login or paywall. It only works if AI can read it freely.</div></div></div><details><summary>▶ View &amp; Copy HTML</summary><pre><code>```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Studio EfEf Photography Courses - Answer Hub&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+        }
+        header {
+            margin-bottom: 40px;
+            border-bottom: 3px solid #000;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.1em;
+            color: #666;
+        }
+        .tldr {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 4px solid #000;
+        }
+        .tldr h2 {
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        .tldr p {
+            margin-bottom: 8px;
+        }
+        section {
+            margin: 40px 0;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.3em;
+            margin: 20px 0 12px 0;
+        }
+        .product-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .product-rank {
+            display: inline-block;
+            background-color: #000;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .product-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-description {
+            color: #555;
+            margin: 10px 0;
+        }
+        .price-range {
+            background-color: #e8e8e8;
+            padding: 8px 12px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        .faq-answer {
+            color: #555;
+            line-height: 1.7;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: #000;
+            color: white;
+            font-weight: bold;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .comparison-table .feature {
+            font-weight: 500;
+            width: 25%;
+        }
+        .check {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        .x {</code></pre></details></div><div class="card"><div class="ctag">Layer 2 · Upload to your website</div><div class="ctitle">Brand Facts Page</div><div class="cdesc">AI engines treat this like a Wikipedia entry for your brand. Written in neutral, factual language so AI can extract key details — what you do, who you serve, certifications, pricing, and policies.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Save the file</strong> as <code>brand-facts.html</code> and publish it at <code>yoursite.com/brand-facts</code>.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Keep this URL permanent</strong> — once AI engines index it, changing the URL means starting over.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Add a quiet link to it in your website footer</strong> — a small "Brand Facts" link is enough.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Update it whenever key details change</strong> — new products, certifications, pricing. Stale facts can work against you.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Keep it public</strong> — AI needs to be able to read it freely.</div></div></div><details><summary>▶ View &amp; Copy HTML</summary><pre><code>```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Studio EfEf - Brand Facts&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            border-bottom: 3px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin-top: 30px;
+            border-left: 4px solid #333;
+            padding-left: 15px;
+        }
+        .infobox {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .section-content {
+            margin: 15px 0;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Studio EfEf&lt;/h1&gt;
+
+&lt;div class=&quot;infobox&quot;&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Field&lt;/th&gt;
+            &lt;th&gt;Details&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Website&lt;/td&gt;
+            &lt;td&gt;www.studioefef.com&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Category&lt;/td&gt;
+            &lt;td&gt;Photography Courses&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Founder&lt;/td&gt;
+            &lt;td&gt;Fran Flynn&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Location&lt;/td&gt;
+            &lt;td&gt;Gold Coast, Australia&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Price Range&lt;/td&gt;
+            &lt;td&gt;USD $100–$500&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+    &lt;p&gt;Studio EfEf is an online photography</code></pre></details></div><div class="card"><div class="ctag">Layer 3 · Requires developer</div><div class="ctitle">Schema Markup &amp; Brand JSON</div><div class="cdesc">The machine-readable layer — invisible to visitors but essential for AI. Tells search engines and AI crawlers exactly how to classify your brand, products, and FAQs.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Copy the JSON-LD block</strong> and give it to your developer to paste inside the <code>&lt;head&gt;</code> tag of your homepage.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>For the brand-facts.json file</strong> — ask your developer to upload it to <code>/.well-known/brand-facts.json</code> on your server.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Test your schema</strong> after it's live at <a href="https://validator.schema.org" target="_blank" style="color:#00E5FF">validator.schema.org</a> — paste your homepage URL and check for errors.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>No developer?</strong> Most platforms (Shopify, Squarespace, Webflow) have a "custom code" section in settings where you can paste JSON-LD directly.</div></div></div><details><summary>▶ View &amp; Copy Code</summary><pre><code>```json
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;Studio EfEf&quot;,
+  &quot;url&quot;: &quot;https://www.studioefef.com&quot;,
+  &quot;logo&quot;: null,
+  &quot;description&quot;: &quot;Photography courses teaching creative food and product photography&quot;,
+  &quot;founder&quot;: {
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: &quot;Fran Flynn&quot;
+  },
+  &quot;foundingDate&quot;: null,
+  &quot;areaServed&quot;: &quot;Worldwide&quot;,
+  &quot;serviceType&quot;: &quot;Photography Education&quot;,
+  &quot;knowsAbout&quot;: [
+    &quot;Manual Mode for Product and Food Photographers&quot;,
+    &quot;AI for Photographers&quot;,
+    &quot;Styling for Food and Product Photography&quot;
+  ],
+  &quot;sameAs&quot;: null,
+  &quot;contactPoint&quot;: null,
+  &quot;address&quot;: null,
+  &quot;telephone&quot;: null,
+  &quot;email&quot;: null,
+  &quot;priceRange&quot;: &quot;$100-$500&quot;
+}
+```
+
+```json
+{
+  &quot;brand&quot;: {
+    &quot;name&quot;: &quot;Studio EfEf&quot;,
+    &quot;website&quot;: &quot;https://www.studioefef.com&quot;,
+    &quot;category&quot;: &quot;photography courses&quot;,
+    &quot;tagline&quot;: &quot;Learning for Creatives&quot;,
+    &quot;description&quot;: &quot;Make your photos a bit extra! Whether you're a pro or just starting out, teach how to take better photos&quot;,
+    &quot;founder&quot;: {
+      &quot;name&quot;: &quot;Fran Flynn&quot;,
+      &quot;credentials&quot;: &quot;Professional photographer, designer and educator with over 20 years of creative self-employment&quot;
+    }
+  },
+  &quot;products&quot;: [
+    {
+      &quot;name&quot;: &quot;Manual Mode for Product and Food Photographers&quot;,
+      &quot;type&quot;: &quot;course&quot;
+    },
+    {
+      &quot;name&quot;: &quot;AI for Photographers&quot;,
+      &quot;type&quot;: &quot;course&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Styling for Food and Product Photography&quot;,
+      &quot;type&quot;: &quot;course&quot;
+    },
+    {
+      &quot;name&quot;: &quot;The Equipment Cheat Sheet&quot;,
+      &quot;type&quot;: &quot;free_guide&quot;
+    }
+  ],
+  &quot;pricing&quot;: {
+    &quot;min&quot;: 100,
+    &quot;max&quot;: 500,
+    &quot;currency&quot;: &quot;USD&quot;
+  },
+  &quot;competitors&quot;: [
+    &quot;Visual Education by Mark Taylor&quot;,
+    &quot;Two Loves Studio&quot;,
+    &quot;The Bite Shot&quot;
+  ],
+  &quot;certifications&quot;: null,
+  &quot;return_policy&quot;: null,
+  &quot;contact_info&quot;: null,
+  &quot;social_media&quot;: null,
+  &quot;physical_location&quot;: null
+}
+```</code></pre></details></div><div class="card"><div class="ctag">Layer 4 · Action checklist</div><div class="ctitle">Google Merchant Center Checklist</div><div class="cdesc">ChatGPT now surfaces shopping results. If your product listings aren't optimised, you're invisible to AI-driven purchase intent.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Open Google Merchant Center</strong> — go to Products → All Products and review your current feed health.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Work through the checklist top to bottom</strong> — items are ordered by impact. Tick each one off as you action it.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>For feed updates</strong> — use your ecommerce platform's built-in feed manager or a tool like DataFeedWatch.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Re-submit your feed</strong> after making changes and allow 3–5 business days for Google to process.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Not on Merchant Center yet?</strong> Create a free account at <a href="https://merchants.google.com" target="_blank" style="color:#00E5FF">merchants.google.com</a> — setup takes about 30 minutes.</div></div></div><details><summary>▶ View &amp; Copy Checklist</summary><pre><code># Google Merchant Center Optimisation Checklist — Studio EfEf
+
+## Top 10 Items by Impact
+
+☐ **Product Titles Optimised**
+Include course name, target audience (Product/Food Photographers), and key outcome. Format: &quot;Manual Mode for Product Photographers | Studio EfEf Photography Course&quot;
+
+☐ **Product Descriptions Complete**
+Add detailed course benefits, learning outcomes, and how each course solves the &quot;teach better photos&quot; problem. Cross-reference blog content (tethered shooting, spot focusing, printing, AI predictions, restaurant photography).
+
+☐ **Price &amp; Currency Setup Verified**
+Confirm all 5 currency prices (USD, GBP, EUR, AUD, NZD) are correctly mapped for each course. [Confirm with brand: exact pricing per course]
+
+☐ **Product Category &amp; Type Assigned**
+Set category as &quot;Online Courses&quot; or &quot;Educational Services.&quot; Assign course-specific type to each: Manual Mode, AI for Photographers, Styling for Food and Product Photography.
+
+☐ **Target Audience Attributes**
+Add custom attributes for each course: skill level (beginner/intermediate/professional), subject (food photography, product photography, AI), and instructor name (Fran Flynn).
+
+☐ **Shipping &amp; Delivery Details**
+[Confirm with brand: delivery method for digital courses—instant access, email delivery, platform link. Specify if applicable.]
+
+☐ **Return Policy Documented**
+[Confirm with brand: return/refund policy for online courses. Add to product feed and Google Merchant Center policy section.]
+
+☐ **Link Product to Website**
+Ensure product landing page URL matches course page on www.studioefef.com/courses. Verify all three courses have live product pages.
+
+☐ **Image Assets &amp; Thumbnails**
+Upload high-quality course cover images or instructor photo (Fran Flynn). [Confirm with brand: image assets available for each course.]
+
+☐ **Structured Data Markup (Schema)**
+Implement Course schema on course landing pages (name, description, instructor, price, aggregateRating if available). Verify markup validates.
+
+---
+
+**Notes:**
+- GTIN/Barcode: [confirm with brand—may not apply to digital courses]
+- Brand/Manufacturer: Studio EfEf (Fran Flynn)
+- Certifications offered: [confirm with brand]
+- Course duration/delivery format: [confirm with brand]</code></pre></details></div><div class="card"><div class="ctag">Layer 5 · 30-day plan</div><div class="ctitle">Citation Building Playbook</div><div class="cdesc">AI engines determine trustworthiness by how many credible sources reference your brand. This week-by-week plan tells you exactly who to contact, what to ask, and which platforms matter most.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Start with Wikidata this week</strong> — highest-leverage first step. Create or claim your brand entity at <a href="https://www.wikidata.org" target="_blank" style="color:#00E5FF">wikidata.org</a>.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Follow the week-by-week plan in order</strong> — the sequence is intentional. Don't skip ahead.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Track every placement in a spreadsheet</strong> — platform, URL, date submitted, date live, status.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Quality over quantity</strong> — one strong citation on a credible industry site beats ten low-authority blog mentions.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Use the email template in the playbook</strong> — personalise it, but don't rewrite it from scratch.</div></div></div><details><summary>▶ View &amp; Copy Playbook</summary><pre><code># Studio EfEf 30-Day Citation Building Playbook
+## Photography Courses Space
+
+---
+
+## WEEK 1: WIKIDATA + REVIEW SITES
+
+### Days 1-3: Wikidata Entity Creation
+
+**Action Items:**
+- Create/optimize Studio EfEf Wikidata entry with:
+  - Official website: www.studioefef.com
+  - Founder: Fran Flynn
+  - Location: Gold Coast, Australia
+  - Business category: Online photography education
+  - Course offerings: Manual Mode for Product and Food Photographers, AI for Photographers, Styling for Food and Product Photography
+  - Field of expertise: Food and product photography instruction
+
+**Process:**
+- Access Wikidata.org and search for Studio EfEf
+- Create new item if not found; add all relevant properties
+- Link to official website and social profiles
+- Add description: &quot;Online photography course provider specializing in food and product photography education&quot;
+
+---
+
+### Days 4-7: Photography Review Sites
+
+**Target Platforms &amp; Actions:**
+
+**Trustpilot**
+- Claim business profile at trustpilot.com
+- Add complete business information
+- Encourage existing students to leave authentic reviews
+- Respond professionally to all reviews
+
+**G2**
+- Create product listings for each course offering
+- Add detailed descriptions of learning outcomes
+- Request reviews from course alumni
+- Include pricing tier information ($100-500 range)
+
+**Capterra**
+- List as photography education platform
+- Highlight course structure and accessibility
+- Add instructor credentials (Fran Flynn's 20+ years experience)
+
+**Photography-Specific Review Sites:**
+- Fred Miranda Forums (post course announcements)
+- DPReview community (mention relevant course content)
+- Fred van Gessel's photography resources
+
+**Outreach Template for Review Sites:**
+
+Subject: Studio EfEf Photography Courses Now Listed on [Platform]
+
+Body:
+Hi [Platform Team],
+
+We've just claimed our business profile on [Platform] and want to ensure our photography course listings are accurate and complete.
+
+Studio EfEf offers specialized courses in food and product photography, including:
+- Manual Mode for Product and Food Photographers
+- AI for Photographers
+- Styling for Food and Product Photography
+
+Our instructor, Fran Flynn, brings over 20 years of professional experience in photography and design. We'd love to have our course portfolio properly represented on your platform.
+
+Please let us know if you need any additional information to complete our profile.
+
+Best regards,
+[Name]
+Studio EfEf
+www.studioefef.com
+
+---
+
+## WEEK 2: INDUSTRY DIRECTORIES
+
+### Days 8-11: Photography Education Directories
+
+**Target Directories:**
+
+**Photography Course Aggregators:**
+- Skillshare (submit course listings)
+- CreativeLive (if applicable for platform)
+- Shaw Academy photography section
+- Udemy photography category (if distributed)
+
+**General Education Directories:**
+- Course Report (photography bootcamp/course listings)
+- BestColleges photography programs section
+- GoodEducation</code></pre></details></div><div class="card"><div class="ctag">Layer 6 · Weekly tracking</div><div class="ctitle">AI Monitoring Prompts</div><div class="cdesc">You can't improve what you don't measure. Paste these into ChatGPT or Perplexity once a week to track how your brand is being described and whether visibility is improving.</div><div class="instr"><div class="instr-label">WHAT TO DO WITH THIS</div><div class="step"><span class="stepn">1</span><div class="steps-text"><strong>Save all 6 prompts</strong> somewhere accessible — a Notes app, Notion doc, or Google Doc you can open weekly.</div></div><div class="step"><span class="stepn">2</span><div class="steps-text"><strong>Run them every Monday morning</strong> in both ChatGPT and Perplexity — the two models often give different results.</div></div><div class="step"><span class="stepn">3</span><div class="steps-text"><strong>Screenshot or copy the responses each week</strong> — you need a record to compare month-on-month.</div></div><div class="step"><span class="stepn">4</span><div class="steps-text"><strong>Note which query types mention Studio EfEf</strong> and which don't — this maps directly to your 6 audit query types.</div></div><div class="step"><span class="stepn">5</span><div class="steps-text"><strong>Share your tracking doc with us</strong> if you're on the monthly subscription — we'll use it to guide each month's work.</div></div></div><details><summary>▶ View &amp; Copy Prompts</summary><pre><code># 6 Weekly AI Monitoring Prompts for Studio EfEf
+
+---
+
+## PROMPT 1: Category Recommendation
+What photography courses should I take to improve my food and product photography skills? Compare options for learning manual mode, AI techniques, and styling approaches.
+
+---
+
+## PROMPT 2: Problem-First
+I struggle to take professional-looking photos of food and products for my business. How can I learn to shoot in manual mode and use styling techniques to improve my results?
+
+---
+
+## PROMPT 3: Direct Brand
+Tell me about Studio EfEf photography courses. What does Fran Flynn offer for food and product photographers wanting to master manual mode and AI photography?
+
+---
+
+## PROMPT 4: Competitor Comparison
+Compare photography course providers: Studio EfEf vs Visual Education by Mark Taylor vs Two Loves Studio vs The Bite Shot. Which offers the best training for food and product photography?
+
+---
+
+## PROMPT 5: Expert Recommendation
+Who is the best educator for learning food and product photography styling, manual camera mode, and AI techniques? What credentials and experience should I look for?
+
+---
+
+## PROMPT 6: Shopping Intent
+Where can I buy photography courses on manual mode for product and food photography, AI for photographers, and styling techniques? What's the typical price range for professional-level courses?</code></pre></details></div><div class="upsell"><div class="utag">MONTHLY AI VISIBILITY SUBSCRIPTION</div><h2 class="utitle">Stay found. Every month.</h2><p class="udesc">AI models update what they recommend constantly. A one-time audit gives you the blueprint — but the brands that win are the ones that keep building. Our monthly subscription keeps your visibility compounding month after month.</p><div class="ufeatures"><div class="uf"><span class="ucheck">✓</span><div><strong>Monthly AI audit</strong> — track your score across all 6 query types and watch it grow</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Fresh content updates</strong> — Answer Hub and Brand Facts refreshed with new questions AI is asking</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Citation building</strong> — ongoing outreach to grow your trust signals every month</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Weekly monitoring prompts</strong> — sent to your inbox so you never miss a shift in your visibility</div></div><div class="uf"><span class="ucheck">✓</span><div><strong>Schema &amp; structured data updates</strong> — keep your markup aligned as AI evolves</div></div></div><a href="https://buy.stripe.com/7sY5kD26tc6C3BHc5V0RG04" class="ubtn" target="_blank">Start your subscription →</a><p class="unote">$400/month · No lock-in · Cancel anytime</p></div><footer><div class="fl">FOUND BY <span>AI</span></div></footer></div></body></html>
